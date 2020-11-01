@@ -34,6 +34,8 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtAvailibility = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,11 +82,19 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
 
         txtName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 210, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Availibility:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 110, 30));
+
+        txtAvailibility.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(txtAvailibility, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
         Product p = supplier.getProductCatalog().addProduct();
         p.setProdName(txtName.getText());
+        p.setAvail(Integer.parseInt(txtAvailibility.getText()));
         String stringPrice = txtPrice.getText();
         if(stringPrice.isEmpty()==false){
             int price = Integer.parseInt(stringPrice);
@@ -110,7 +120,9 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField txtAvailibility;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;

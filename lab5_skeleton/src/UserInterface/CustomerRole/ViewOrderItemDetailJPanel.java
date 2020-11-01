@@ -4,6 +4,7 @@
  */
 package UserInterface.CustomerRole;
 
+import Business.OrderItem;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -17,8 +18,17 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewOrderItemDetailJPanel
      */
-    public ViewOrderItemDetailJPanel() {
+    private JPanel upc;
+    private OrderItem oi;
+    public ViewOrderItemDetailJPanel(JPanel upc, OrderItem oi) {
         initComponents();
+        this.upc=upc;
+        this.oi=oi;
+        txtProductName.setText(oi.getProduct().getProdName());
+        txtProductId.setText(String.valueOf(oi.getProduct().getModelNumber()));
+        txtPaidPrice.setText(String.valueOf(oi.getSalesPrice()));
+        txtQuantity.setText(String.valueOf(oi.getQuatity()));
+        txtSalesPrice.setText(String.valueOf(oi.getProduct().getPrice()));
         
     }
 
@@ -152,7 +162,9 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
 
     private void backButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButton1ActionPerformed
         // TODO add your handling code here:
-        
+        upc.remove(this);
+        CardLayout layout=(CardLayout)upc.getLayout();
+        layout.previous(upc);
     }//GEN-LAST:event_backButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

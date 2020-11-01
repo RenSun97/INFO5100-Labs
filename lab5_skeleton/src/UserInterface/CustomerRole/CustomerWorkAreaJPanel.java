@@ -5,6 +5,12 @@
  */
 package UserInterface.CustomerRole;
 
+import Business.MasterOrderCatalog;
+import Business.SupplierDirectory;
+import javax.swing.JPanel;
+import java.awt.CardLayout;
+import UserInterface.CustomerRole.BrowseProducts;
+
 
 
 
@@ -18,10 +24,16 @@ package UserInterface.CustomerRole;
 public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
 
+    private JPanel upc;
+    private SupplierDirectory supplierDir;
+    private MasterOrderCatalog moc;
 
     /** Creates new form ProductManagerWorkAreaJPanel */
-    public CustomerWorkAreaJPanel() {
+    public CustomerWorkAreaJPanel(JPanel upc, SupplierDirectory supplierDir, MasterOrderCatalog moc) {
         initComponents();
+        this.upc=upc;
+        this.moc=moc;
+        this.supplierDir=supplierDir;
     }
 
     /** This method is called from within the constructor to
@@ -62,6 +74,10 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        BrowseProducts cwajp = new BrowseProducts(upc, supplierDir, moc);
+        upc.add("customerWA", cwajp);
+        CardLayout layout = (CardLayout)upc.getLayout();
+        layout.next(upc);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

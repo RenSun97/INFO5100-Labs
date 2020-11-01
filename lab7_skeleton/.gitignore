@@ -1,0 +1,5 @@
+*.lic
+/nbproject/private/
+/build/
+/dist/
+*.csv

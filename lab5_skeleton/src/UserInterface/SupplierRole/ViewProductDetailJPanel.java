@@ -21,6 +21,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         txtName.setText(p.getProdName());
         txtId.setText(String.valueOf(p.getModelNumber()));
         txtPrice.setText(String.valueOf(p.getPrice()));
+        txtAvailibility.setText(String.valueOf(p.getAvail()));
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,6 +37,8 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         txtId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtAvailibility = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -97,6 +100,15 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 70, 30));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Availibility:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 30));
+
+        txtAvailibility.setEditable(false);
+        txtAvailibility.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtAvailibility.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add(txtAvailibility, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 159, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -104,6 +116,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         //txtId.setEditable(true);
         txtName.setEditable(true);
         txtPrice.setEditable(true);
+        txtAvailibility.setEditable(true);
         btnSave.setEnabled(true);
 }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -124,6 +137,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         product.setPrice(Integer.parseInt(txtPrice.getText()));
         product.setProdName(txtName.getText());
+        product.setAvail(Integer.parseInt(txtAvailibility.getText()));
     }//GEN-LAST:event_btnSaveActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -133,7 +147,9 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField txtAvailibility;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;
