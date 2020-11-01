@@ -45,7 +45,7 @@ public class AdminCreateScreen extends javax.swing.JPanel {
 
     }
     private boolean pwdPatternCorrect() {
-        Pattern p = Pattern.compile("^[a-zA-Z0-9~!@#$%^&*()_+|<>,.?/:;']+$ ");
+        Pattern p = Pattern.compile("^[a-zA-Z0-9_.,\\-()/=+?!*;@#:%\\[\\]‘\\\\${}^|~\\n\\r\\t ]{1,35} ");
         Matcher m = p.matcher(txtPword.getText());
         boolean b = m.matches();
         return b;
