@@ -5,10 +5,22 @@
  */
 package Business.Customer;
 
+import Business.Restaurant.Order;
+import Business.UserAccount.UserAccount;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author harold
  */
-public class Customer {
+public class Customer extends UserAccount{
+    
+    private List<Order> order;
+    //private List<Order> shoppingCart =new ArrayList<Order>();
+
+    public Customer() {
+        this.order = new ArrayList<Order>();
+    }
     
 }

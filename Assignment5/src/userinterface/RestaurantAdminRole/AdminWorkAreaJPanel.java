@@ -3,7 +3,11 @@
 package userinterface.RestaurantAdminRole;
 
 
+import Business.EcoSystem;
+import Business.Restaurant.Restaurant;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -13,13 +17,21 @@ import javax.swing.JPanel;
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
+    EcoSystem ecosystem;
+    UserAccount userAccount;
+    Restaurant res;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public AdminWorkAreaJPanel(JPanel userProcessContainer) {
+    public AdminWorkAreaJPanel(JPanel userProcessContainer,UserAccount account,EcoSystem ecosystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-      
-        //valueLabel.setText();
+        this.userAccount = account;
+        this.ecosystem =  ecosystem;
+        this.res = this.ecosystem.getRestaurantDirectory().searchRestaurantByAdmin(account.getUsername());
+        if(this.res!=null)
+            this.valueLabel.setText(this.res.getRestaurantName());
+        else
+            JOptionPane.showMessageDialog(null, "System error occurred! Please log out!");
     }
     
     /** This method is called from within the constructor to
@@ -77,15 +89,24 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
         // TODO add your handling code here:
-        
+        JPanel viewRes=new ViewRestaurantInfo(this.userProcessContainer,this.ecosystem,this.res.getRestaurantName());
+       userProcessContainer.add("ViewRestaurantInfo",viewRes);
+       CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
+       crdLyt.show(userProcessContainer,"ViewRestaurantInfo");
     }//GEN-LAST:event_userJButtonActionPerformed
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
-
+        JPanel manageMenu=new ManageMenu(this.userProcessContainer,this.ecosystem,this.res.getRestaurantName());
+       userProcessContainer.add("ManageMenu",manageMenu);
+       CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
+       crdLyt.show(userProcessContainer,"ManageMenu");  
     }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
-
+        JPanel manageOrder=new ManageOrder(this.userProcessContainer,this.ecosystem,this.res.getRestaurantName());
+       userProcessContainer.add("ManageOrder",manageOrder);
+       CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
+       crdLyt.show(userProcessContainer,"ManageOrder");  
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
     
     

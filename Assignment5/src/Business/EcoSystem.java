@@ -30,7 +30,7 @@ public class EcoSystem extends Organization{
         this.customerDirectory = customerDirectory;
         this.deliveryManDirectory = deliveryManDirectory;
     }
-    
+
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
@@ -44,9 +44,25 @@ public class EcoSystem extends Organization{
         roleList.add(new SystemAdminRole());
         return roleList;
     }
+ 
     private EcoSystem(){
         super(null);
+        this.restaurantDirectory=new RestaurantDirectory();
+        this.customerDirectory=new CustomerDirectory();
+        this.deliveryManDirectory=new DeliveryManDirectory();
        // networkList=new ArrayList<Network>();
+    }
+
+    public RestaurantDirectory getRestaurantDirectory() {
+        return restaurantDirectory;
+    }
+
+    public CustomerDirectory getCustomerDirectory() {
+        return customerDirectory;
+    }
+
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        return deliveryManDirectory;
     }
 
     
