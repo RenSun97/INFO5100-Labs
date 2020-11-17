@@ -81,7 +81,7 @@ public class ViewRestaurantInfo extends javax.swing.JPanel {
         jLabel2.setText("Restaurant Info");
 
         btnBack.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        btnBack.setText("Back");
+        btnBack.setText("back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -184,7 +184,7 @@ public class ViewRestaurantInfo extends javax.swing.JPanel {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         CardLayout layout=(CardLayout)this.userProcessContainer.getLayout();
         this.userProcessContainer.remove(this);
-        layout.show(userProcessContainer, "userMain");
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 

@@ -189,7 +189,7 @@ public class ViewShoppingCart extends javax.swing.JPanel {
         // TODO add your handling code here:
          CardLayout layout=(CardLayout)this.userProcessContainer.getLayout();
         this.userProcessContainer.remove(this);
-        layout.show(userProcessContainer, "ViewMenus");
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void tabMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabMenuMouseClicked

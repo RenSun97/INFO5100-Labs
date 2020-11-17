@@ -185,7 +185,7 @@ public class ViewOrders extends javax.swing.JPanel {
         // TODO add your handling code here:
         CardLayout layout=(CardLayout)this.userProcessContainer.getLayout();
         this.userProcessContainer.remove(this);
-        layout.show(userProcessContainer, "userMain");
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 

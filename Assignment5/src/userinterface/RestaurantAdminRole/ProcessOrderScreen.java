@@ -226,7 +226,7 @@ public class ProcessOrderScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
         CardLayout layout=(CardLayout)this.userProcessContainer.getLayout();
         this.userProcessContainer.remove(this);
-        layout.show(userProcessContainer, "ManageOrder");
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void tabOrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabOrdersMouseClicked

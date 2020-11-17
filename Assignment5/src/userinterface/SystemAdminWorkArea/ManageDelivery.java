@@ -262,7 +262,7 @@ public class ManageDelivery extends javax.swing.JPanel {
         // TODO add your handling code here:
         CardLayout layout=(CardLayout)this.userProcessContainer.getLayout();
         this.userProcessContainer.remove(this);
-        layout.show(userProcessContainer, "userMain");
+        layout.previous(userProcessContainer);
         Component[] comps=this.userProcessContainer.getComponents();
         for(Component comp:comps)
         {

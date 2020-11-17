@@ -245,7 +245,7 @@ public void populate()
         // TODO add your handling code here:
         CardLayout layout=(CardLayout)this.userProcessContainer.getLayout();
         this.userProcessContainer.remove(this);
-        layout.show(userProcessContainer, "CustomerSelectRestaurtrant");
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 

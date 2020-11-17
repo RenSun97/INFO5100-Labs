@@ -58,7 +58,7 @@ public class CreateMenuScreen extends javax.swing.JPanel {
         jLabel7.setText("Create new menu");
 
         btnBack.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        btnBack.setText("Back");
+        btnBack.setText("back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -137,7 +137,7 @@ public class CreateMenuScreen extends javax.swing.JPanel {
                 manageP.populate();
             }
         }
-        layout.show(this.userProcessContainer, "ManageMenu");
+        layout.previous(this.userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
